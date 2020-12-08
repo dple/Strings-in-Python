@@ -11,7 +11,8 @@ import os
 def superReducedString(s):
     '''
     The first method makes use of a predefined list and lookup if this happens in the string then remove. 
-    This process repeats until none of 'predefined words' in the list is in the string.
+    This process repeats until none of 'predefined words' in the list is in the string. However, this 
+    implementation limits to lower letters only.
     '''
         
     l = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'hh', 'ii', 'jj', 'kk', 'll',
@@ -34,7 +35,7 @@ def superReducedString(s):
 
 def superReducedString1(s):
     '''
-    The 2nd method has better performance. 
+    The 2nd method has better performance and is more generic. It is applicable to any letters or special symbols.
     '''
     i = 0
     while i < len(s) - 1:
