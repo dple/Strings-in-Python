@@ -1,6 +1,16 @@
+"""
+Given a string, the script will remove some characters and get the longest alternative string. 
+An alternative string consists of only 2 characters and these two are alternative in the string, 
+For example: s = 'abababa' is an alternative string
+
+Given: s = 'beabeefeab', the algorithm will remove characters 'e' and'f' in the string.
+Return: 'babab'
+"""
+
 from itertools import combinations
 
 def isAlternativeString(s):
+    """ Check if a string is alternative or not """
     L = list(set(s))
     if len(L) != 2:
         return False
@@ -9,7 +19,6 @@ def isAlternativeString(s):
             return False
     return True
 
-# Complete the alternate function below.
 def alternate(s):
     L = set(s)    # get unique characters in the string
     n = len(L)
@@ -30,7 +39,7 @@ def alternate(s):
             t_ret = t_ret.replace(c, '')
         if isAlternativeString(t_ret) and len(t_ret) > len(ret):
             ret = t_ret
-    return len(ret)
+    return ret
 
 if __name__ == '__main__':
     s = 'beabeefeab'
